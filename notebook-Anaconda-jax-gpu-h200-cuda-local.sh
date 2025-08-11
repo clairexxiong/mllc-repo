@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=jaxh200
+#SBATCH --job-name=jax_h200
 #SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu=16G
 #SBATCH -p mit_normal_gpu
