@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=condajax
+#SBATCH --job-name=jax_sloangpu
 #SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu=16G
 #SBATCH -p sched_mit_sloan_gpu_r8
