@@ -5,7 +5,7 @@
 #SBATCH --mem-per-cpu=16G
 #SBATCH -p sched_mit_sloan_gpu_r8
 #SBATCH --time=01:00:00
-#SBATCH --gres=gpu:2
+#SBATCH --gres=gpu:a100:2
 #SBATCH -o notebook_%A.out
 
 set -euo pipefail
