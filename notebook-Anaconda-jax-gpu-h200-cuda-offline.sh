@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu=16G
 #SBATCH -p mit_normal_gpu
-#SBATCH --time=06:00:00
+#SBATCH --time=01:00:00
 #SBATCH --gres=gpu:h200:2
 #SBATCH -o notebook_%A.out
 
