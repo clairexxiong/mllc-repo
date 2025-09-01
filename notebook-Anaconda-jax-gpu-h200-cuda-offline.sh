@@ -4,12 +4,13 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu=16G
 #SBATCH -p mit_normal_gpu
-#SBATCH --time=01:00:00
-#SBATCH --gres=gpu:h200:1
+#SBATCH --time=06:00:00
+#SBATCH --gres=gpu:h200:2
 #SBATCH -o notebook_%A.out
 
+set -euo pipefail
+
 # Initialize environment modules
-module purge 
 source "$HOME/anaconda3/bin/activate" jax_cuda_offline
 export PYTHONNOUSERSITE=1
 
@@ -26,6 +27,9 @@ export XLA_FLAGS="--xla_gpu_cuda_data_dir=$NVCC_DIR ${XLA_FLAGS:-}"
 export XLA_PYTHON_CLIENT_PREALLOCATE=false
 export XLA_PYTHON_CLIENT_ALLOCATOR=platform
 export JAX_PLATFORMS=cuda
+export NCCL_DEBUG=WARN
+export NCCL_P2P_DISABLE=0
+export NCCL_SHM_DISABLE=0
 
 # Set the IP address and port
 IP=`hostname -i`
